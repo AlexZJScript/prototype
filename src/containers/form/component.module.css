@@ -1,0 +1,41 @@
+.field {
+	padding: var(--gap-s) 0;
+}
+
+.tabsField {
+	padding: var(--gap-s) 0 0;
+}
+
+.switchContainer {
+	padding: var(--gap-m) 0;
+}
+
+.addon {
+	fill: #747474;
+}
+
+.textAreaField {
+	background-color: var(--color-light-bg-secondary) !important;
+}
+
+.formDescription {
+	padding: var(--gap-xs) 0;
+}
+
+.formDescriptionText {
+	opacity: 0.6;
+}
+
+.formAction {
+	display: flex;
+	padding: var(--gap-m) 0;
+}
+
+.formAction > *:not(:first-child) {
+	margin-left: var(--gap-xs);
+}
+
+.section {
+	font-weight: 600;
+	padding: var(--gap-xl) 0 var(--gap-m);
+}

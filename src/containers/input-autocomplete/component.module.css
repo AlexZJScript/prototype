@@ -1,0 +1,13 @@
+.subTitle {
+    opacity: 0.6;
+    padding-top: var(--gap-2xs);
+}
+
+.option {
+    padding: var(--gap-xs) var(--gap-m);
+}
+
+.bottomSheetHeader {
+    margin-top: var(--gap-3xs);
+    margin-bottom: calc(var(--gap-xl) / 2);
+}

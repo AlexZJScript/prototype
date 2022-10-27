@@ -1,0 +1,26 @@
+.navBar {
+	display: flex;
+	align-items: center;
+	justify-content: space-between;
+	padding: var(--gap-m);
+	position: sticky;
+	top: 0;
+	z-index: 100;
+	background-color: #ffff;
+	margin: 0 var(--gap-m-neg);
+}
+
+.optionDescription {
+	opacity: 0.6;
+}
+
+.header {
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+	padding: var(--gap-l) 0 var(--gap-m);
+}
+
+.recipient {
+	font-weight: 600;
+}

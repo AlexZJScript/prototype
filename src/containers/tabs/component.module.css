@@ -1,0 +1,16 @@
+.label {
+    font-size: 14px;
+    line-height: 18px;
+    font-weight: 400;
+    opacity: 0.7;
+    color: var(--form-control-label-color);
+}
+
+.container {
+    margin-top: calc(var(--gap-s) / 2);
+    margin-bottom: var(--gap-s);
+}
+
+.addon {
+    fill: #747474;
+}

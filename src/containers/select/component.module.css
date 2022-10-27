@@ -1,0 +1,24 @@
+.footer {
+    border-top: 1px solid var(--button-secondary-base-bg-color);
+}
+
+.option {
+    padding-top: 0;
+    padding-bottom: 0;
+}
+
+.option:not(:first-child) {
+    padding-top: var(--gap-xs);
+}
+
+.option:not(:last-child) {
+    padding-bottom: var(--gap-xs);
+}
+
+.optionList {
+    padding-bottom: 40px;
+}
+
+.header {
+    margin-bottom: var(--gap-s);
+}

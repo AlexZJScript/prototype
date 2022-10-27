@@ -1,0 +1,75 @@
+.header {
+	z-index: 100;
+}
+
+.headerContent {
+	position: relative;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	padding: var(--gap-s);
+	flex-direction: column;
+}
+
+.headerAddon {
+	position: absolute;
+	right: 0;
+	top: 1px;
+	bottom: 0;
+}
+
+.lightText {
+	opacity: 0.6;
+}
+
+.content {
+	flex: 1;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+}
+
+.successContent.successContent {
+	margin-top: 80px;
+	padding: 0;
+	flex-direction: column;
+	justify-content: start;
+	text-align: center;
+}
+
+.successContentIconsContainer {
+	margin-top: var(--gap-2xl);
+	display: flex;
+	padding: 0 var(--gap-xs) var(--gap-m);
+}
+
+.successContentIconsContainer > *:not(:first-child) {
+	margin-left: var(--gap-m);
+}
+
+.actionButton.actionButton {
+	background-color: #000;
+}
+
+.actionButtonDescription {
+	font-weight: 400;
+	font-size: 13px;
+	line-height: 18px;
+}
+
+.footer.footer {
+	margin-top: auto;
+	padding: var(--gap-m) var(--gap-m) 0;
+}
+
+.sum {
+	margin-top: var(--gap-2xl);
+}
+
+.commission {
+	margin-top: var(--gap-xs);
+}
+
+.recipient {
+	margin-top: var(--gap-xl);
+}
