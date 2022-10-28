@@ -48,6 +48,11 @@ const contragentValuesToFill = {
     kpp: 'subTitle',
 }
 
+const recipientBankNumbersFilterInputProps = {
+	type: 'text',
+	inputMode: 'numeric'
+}
+
 export type FormProps = {
     onSubmit: () => void;
 }
@@ -56,7 +61,7 @@ export const Form: FC<FormProps> = ({ onSubmit }) => {
 	return (
 		<Formik initialValues={initialValues} onSubmit={onSubmit}>
 			{({ values }) => (
-				<FormikForm>
+				<FormikForm className={styles.form} >
 					<InputAutocomplete
 						className={styles.field}
 						labelView='outer'
@@ -104,6 +109,7 @@ export const Form: FC<FormProps> = ({ onSubmit }) => {
 						label='Счет получателя'
 						headerTitle='Счет получателя'
 						options={recipientBankNumbers}
+						bottomSheetHeaderAddonsProps={recipientBankNumbersFilterInputProps}
 						mask={recipientBankNumberMask}
 						placeholder='00000 000 0 0000 0000000'
 						name='bankAcount'

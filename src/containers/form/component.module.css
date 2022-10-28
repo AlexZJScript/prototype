@@ -2,6 +2,10 @@
 	padding: var(--gap-s) 0;
 }
 
+.form {
+	padding-bottom: var(--gap-6xl);
+}
+
 .tabsField {
 	padding: var(--gap-s) 0 0;
 }

@@ -27,20 +27,19 @@
 	display: flex;
 	justify-content: center;
 	align-items: center;
+	padding: 0 var(--gap-m) 44px !important;
 }
 
 .successContent.successContent {
-	margin-top: 80px;
-	padding: 0;
+	padding: 0 !important;
 	flex-direction: column;
 	justify-content: start;
-	text-align: center;
 }
 
 .successContentIconsContainer {
 	margin-top: var(--gap-2xl);
 	display: flex;
-	padding: 0 var(--gap-xs) var(--gap-m);
+	padding: 0 var(--gap-xs);
 }
 
 .successContentIconsContainer > *:not(:first-child) {
@@ -59,7 +58,7 @@
 
 .footer.footer {
 	margin-top: auto;
-	padding: var(--gap-m) var(--gap-m) 0;
+	padding: var(--gap-m);
 }
 
 .sum {
@@ -72,4 +71,14 @@
 
 .recipient {
 	margin-top: var(--gap-xl);
+}
+
+.successContainer {
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	flex-direction: column;
+	padding: 0 var(--gap-m) var(--gap-m);
+	margin-top: 80px;
+	text-align: center;
 }

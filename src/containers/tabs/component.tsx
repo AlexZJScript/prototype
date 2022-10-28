@@ -58,6 +58,7 @@ export const Tabs: FC<TabsProps> = ({
 							block={true}
 							label='Назначение платежа'
 							labelView='outer'
+							size='m'
 							value={inputValue}
 							onChange={handleInputChange}
 							hint={`${inputValue.length}/240 символов`}

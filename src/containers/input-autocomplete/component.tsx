@@ -1,4 +1,4 @@
-import React, { FC, memo, useCallback, useMemo, useState } from 'react';
+import React, { FC, memo, useCallback, useEffect, useMemo, useRef, useState } from 'react';
 import { useFormikContext, useField } from 'formik';
 import cn from 'classnames';
 
@@ -44,11 +44,12 @@ export type InputAutocomplete = Omit<InputAutocompleteMobileProps, 'name' | 'onC
 	mask?: Array<string | RegExp>;
 };
 
-export const InputAutocomplete: FC<InputAutocomplete> = ({ name, mask, options, headerTitle, valueToFill, valuesToFill, ...restProps }) => {
+export const InputAutocomplete: FC<InputAutocomplete> = ({ name, mask, bottomSheetHeaderAddonsProps, options, headerTitle, valueToFill, valuesToFill, ...restProps }) => {
 	const { setValues, values } = useFormikContext();
 	const [{ value }, meta, { setValue }] = useField(name);
 	const [filter, setFilter] = useState('');
 	const [open, setOpen] = useState(false);
+	const filterInputRef = useRef<HTMLInputElement>(null)
 
 	const transformedOptions = useMemo(() => {
 		const filteredOptions = filter
@@ -126,14 +127,24 @@ export const InputAutocomplete: FC<InputAutocomplete> = ({ name, mask, options, 
 		})
 	}, [headerTitle])
 
+	useEffect(() => {
+		if (open) {
+			setTimeout(() => {
+				filterInputRef.current?.focus()
+			})
+		}
+	}, [open])
+
 	const { filterInputProps, Input } = useMemo(() => ({
 		filterInputProps: {
 			placeholder: '',
 			size: 'm',
+			ref: filterInputRef,
 			...(mask ? { mask } : {}),
+			...bottomSheetHeaderAddonsProps,
 		},
 		...(mask ? { Input: MaskedInput } : {})
-	}), [mask])
+	}), [mask, bottomSheetHeaderAddonsProps])
 
 	return (
 		<MemoizedInputAutocompleteMobile

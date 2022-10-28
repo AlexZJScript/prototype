@@ -95,7 +95,7 @@ export const SuccessModal: FC<ModalMobileProps> = ({
 						phone='+7 ••• ••• 08 88'
 					/>
 				) : (
-					<React.Fragment>
+					<div className={styles.successContainer}>
 						<SuperEllipse backgroundColor='var(--color-light-graphic-positive)'>
 							<CheckmarkMIcon fill='#ffff' />
 						</SuperEllipse>
@@ -134,7 +134,7 @@ export const SuccessModal: FC<ModalMobileProps> = ({
 								</Typography.Text>
 							</ActionButton>
 						</div>
-					</React.Fragment>
+					</div>
 				)}
 				{success && (
 					<ModalMobile.Footer className={styles.footer} layout='center' sticky>
