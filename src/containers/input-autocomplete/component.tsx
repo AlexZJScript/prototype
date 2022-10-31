@@ -57,6 +57,7 @@ export const InputAutocomplete: FC<InputAutocompleteProps> = ({
                                                                   headerTitle,
                                                                   valueToFill,
                                                                   valuesToFill,
+    fieldProps: defaultFieldProps,
                                                                   ...restProps
                                                               }) => {
     const {setValues, values} = useFormikContext();
@@ -159,6 +160,11 @@ export const InputAutocomplete: FC<InputAutocompleteProps> = ({
         ...(mask ? {Input: MaskedInput} : {})
     }), [mask, bottomSheetHeaderAddonsProps])
 
+    const fieldProps = useMemo(() => ({
+        value,
+        focused: false,
+    }), [defaultFieldProps, value])
+
     return (
         <MemoizedInputAutocompleteMobile
             Input={Input}
@@ -168,13 +174,13 @@ export const InputAutocomplete: FC<InputAutocompleteProps> = ({
             onFilter={handleChangeFilter}
             optionClassName={cn(styles.option)}
             onChange={handleChange}
-            value={value}
             filter={filter}
             options={transformedOptions}
             onClearFilter={handleClearFilter}
             size='m'
             bottomSheetHeaderAddonsProps={filterInputProps}
             bottomSheetProps={bottomSheetProps}
+            fieldProps={fieldProps}
             {...restProps}
         />
     );

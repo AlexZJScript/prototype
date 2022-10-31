@@ -2,8 +2,8 @@ import { FC, memo, useState } from 'react';
 
 import { Switch as DefaultSwitch, SwitchProps } from '@alfalab/core-components/switch';
 
-export const UnMemoSwitch: FC<SwitchProps> = ({ className, ...props }) => {
-	const [checked, setChecked] = useState(false);
+export const UnMemoSwitch: FC<SwitchProps> = ({ defaultChecked, className, ...props }) => {
+	const [checked, setChecked] = useState(defaultChecked || false);
 
 	const handleChange = () => setChecked((prev) => !prev);
 

@@ -1,0 +1,22 @@
+.option {
+    display: flex;
+    align-items: center;
+}
+
+.optionContent {
+    padding-left: var(--gap-s);
+}
+
+.optionSubTitle {
+    padding-top: var(--gap-2xs);
+    opacity: 0.6;
+}
+
+.optionsList {
+    padding-bottom: 33px;
+}
+
+.header {
+    margin-top: 1px;
+    padding-bottom: 6px;
+}
