@@ -35,7 +35,7 @@ export const Select: FC<SelectPops> = ({
 	const options: SelectMobileProps['options'] = useMemo(() => {
 		return defaultOptions.map(({ id, label, hint }) => ({
 			key: id.toString(),
-			content: <Radio checked={newSelected === id} label={label} hint={hint} />,
+			content: <Radio checked={newSelected === id} size='m' label={label} hint={hint} />,
 		}));
 	}, [defaultOptions, newSelected]);
 

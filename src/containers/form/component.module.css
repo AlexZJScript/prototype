@@ -43,3 +43,24 @@
 	font-weight: 600;
 	padding: var(--gap-xl) 0 var(--gap-m);
 }
+
+.commissionContainer {
+	border-radius: 10px;
+	background-color: var(--color-light-bg-secondary);
+	padding: var(--gap-m) var(--gap-s);
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+}
+
+.commissionField {
+	margin: var(--gap-m) 0 var(--gap-s);
+}
+
+.commissionText {
+	white-space: pre-line;
+}
+
+.optionsList {
+	padding-bottom: var(--gap-m);
+}

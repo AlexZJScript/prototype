@@ -114,7 +114,7 @@ export const SuccessModal: FC<ModalMobileProps> = ({
 							className={cn(styles.recipient, styles.lightText)}
 							view='primary-medium'
 						>
-							ИП Коряковцева Валерия Константиновна в Альфа-банк по реквизитам
+							ИП Коряковцева Валерия Константиновна в Альфа-Банк по реквизитам
 						</Typography.Text>
 						<div className={styles.successContentIconsContainer}>
 							<ActionButton
