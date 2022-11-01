@@ -1,23 +1,20 @@
-import React, { FC } from 'react';
-import cn from 'classnames';
+import React, { FC } from "react";
+import cn from "classnames";
 
-import {
-	ModalMobile,
-	ModalMobileProps as DefaultModalMobileProps,
-} from '@alfalab/core-components/modal/mobile';
-import { Typography } from '@alfalab/core-components/typography';
-import { IconButton } from '@alfalab/core-components/icon-button';
-import { CrossMIcon } from '@alfalab/icons-glyph/CrossMIcon';
-import { ConfirmationMobile } from '@alfalab/core-components/confirmation/component.mobile';
-import { SuperEllipse } from '@alfalab/core-components/icon-view/super-ellipse';
-import { CheckmarkMIcon } from '@alfalab/icons-glyph/CheckmarkMIcon';
-import { ActionButton } from '@alfalab/core-components/action-button';
-import { PlusMIcon } from '@alfalab/icons-glyph/PlusMIcon';
-import { DocumentLinesLineMIcon } from '@alfalab/icons-glyph/DocumentLinesLineMIcon';
-import { Button } from '@alfalab/core-components/button';
+import { ModalMobile, ModalMobileProps as DefaultModalMobileProps } from "@alfalab/core-components/modal/mobile";
+import { Typography } from "@alfalab/core-components/typography";
+import { IconButton } from "@alfalab/core-components/icon-button";
+import { CrossMIcon } from "@alfalab/icons-glyph/CrossMIcon";
+import { ConfirmationMobile } from "@alfalab/core-components/confirmation/component.mobile";
+import { SuperEllipse } from "@alfalab/core-components/icon-view/super-ellipse";
+import { CheckmarkMIcon } from "@alfalab/icons-glyph/CheckmarkMIcon";
+import { ActionButton } from "@alfalab/core-components/action-button";
+import { PlusMIcon } from "@alfalab/icons-glyph/PlusMIcon";
+import { DocumentLinesLineMIcon } from "@alfalab/icons-glyph/DocumentLinesLineMIcon";
+import { Button } from "@alfalab/core-components/button";
 // @ts-ignore
-import styles from './component.module.css';
-import { useConfirmation } from '@alfalab/core-components/confirmation';
+import styles from "./component.module.css";
+import { useConfirmation } from "@alfalab/core-components/confirmation";
 
 export type ModalMobileProps = DefaultModalMobileProps & {
 	success: boolean;
@@ -54,9 +51,6 @@ export const SuccessModal: FC<ModalMobileProps> = ({
 			>
 				{!success ? (
 					<React.Fragment>
-						<Typography.Text view='component' weight='medium'>
-							Введите код из сообщения
-						</Typography.Text>
 						<IconButton
 							view='secondary'
 							onClick={onClose}
@@ -114,7 +108,7 @@ export const SuccessModal: FC<ModalMobileProps> = ({
 							className={cn(styles.recipient, styles.lightText)}
 							view='primary-medium'
 						>
-							ИП Коряковцева Валерия Константиновна в Альфа-Банк по реквизитам
+							ИП Коряковцева Валерия Константиновна в&nbsp;Альфа&#8209;Банк по реквизитам
 						</Typography.Text>
 						<div className={styles.successContentIconsContainer}>
 							<ActionButton

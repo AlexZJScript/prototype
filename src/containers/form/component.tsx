@@ -4,7 +4,6 @@ import cn from "classnames";
 
 import { QuestionCircleMIcon } from "@alfalab/icons-glyph/QuestionCircleMIcon";
 import { Typography } from "@alfalab/core-components/typography";
-import { CalendarInput } from "@alfalab/core-components/calendar-input";
 import { Link } from "@alfalab/core-components/link";
 import { Button } from "@alfalab/core-components/button";
 import { PickerButton } from "@alfalab/core-components/picker-button";
@@ -28,6 +27,7 @@ import {
 } from "./mocks";
 import { recipientBankNumberMask } from "./masks";
 import { BankAccountSelect } from "../bank-account-select";
+import { CalendarInput } from "../calendar-input";
 
 const initialValues = {
 	contragent: "",
@@ -38,9 +38,8 @@ const initialValues = {
 	sendersAccount: "12323131",
 	amount: "",
 	paymentTarget: "",
-	documentNumber: "",
+	documentNumber: "98584",
 	uun: "",
-	comisionMessage: "Заполните реквизиты, и мы рассчитаем комиссию",
 };
 
 const defaultCalendarValue = `${new Date().getDate()}.${
@@ -200,24 +199,8 @@ export const Form: FC<FormProps> = ({ onSubmit }) => {
 						labelView="outer"
 						className={styles.field}
 					/>
-					<CalendarInput
-						label="Дата в документе"
-						labelView="outer"
-						block={true}
-						size="m"
-						className={styles.field}
-						defaultValue={defaultCalendarValue}
-						calendarProps={defaultCalendarProps}
-					/>
-					<CalendarInput
-						label="Отправить не ранее"
-						labelView="outer"
-						block={true}
-						size="m"
-						className={styles.field}
-						defaultValue={defaultCalendarValue}
-						calendarProps={defaultCalendarProps}
-					/>
+					<CalendarInput label='Дата в документе' className={styles.field}/>
+					<CalendarInput label='Отправить не ранее' className={styles.field}/>
 					<Select
 						label="Срочность"
 						title="Выберите срочность"
@@ -269,7 +252,7 @@ export const Form: FC<FormProps> = ({ onSubmit }) => {
 							view="primary-medium"
 						>
 							{
-								"С 1:00 до 21:00 мск отправляем платежи в другие банки. "
+								"С 1:00 до 21:00 мск отправляем платежи в\xa0другие банки. "
 							}
 						</Typography.Text>
 						<Link view="default">Подробнее</Link>

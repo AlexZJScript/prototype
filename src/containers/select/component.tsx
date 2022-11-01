@@ -1,13 +1,12 @@
-import { FC, useMemo, useState } from 'react';
+import { FC, useMemo, useState } from "react";
 
-import { CrossMIcon } from '@alfalab/icons-glyph/CrossMIcon';
-import { SelectMobile, SelectMobileProps } from '@alfalab/core-components/select';
-import { Button } from '@alfalab/core-components/button';
-import { Radio } from '@alfalab/core-components/radio';
-import { Typography } from '@alfalab/core-components/typography';
+import { CrossMIcon } from "@alfalab/icons-glyph/CrossMIcon";
+import { SelectMobile, SelectMobileProps } from "@alfalab/core-components/select";
+import { Radio } from "@alfalab/core-components/radio";
+import { Typography } from "@alfalab/core-components/typography";
 // @ts-ignore
-import styles from './component.module.css';
-import { Option } from './option/component';
+import styles from "./component.module.css";
+import { Option } from "./option/component";
 
 export type Option = {
 	id: string | number;
@@ -30,14 +29,13 @@ export const Select: FC<SelectPops> = ({
 }) => {
 	const [open, setOpen] = useState(false);
 	const [selected, setSelected] = useState(defaultOptions[0].id || 0);
-	const [newSelected, setNewSelected] = useState(selected);
 
 	const options: SelectMobileProps['options'] = useMemo(() => {
 		return defaultOptions.map(({ id, label, hint }) => ({
 			key: id.toString(),
-			content: <Radio checked={newSelected === id} size='m' label={label} hint={hint} />,
+			content: <Radio checked={selected === id} size='m' label={label} hint={hint} />,
 		}));
-	}, [defaultOptions, newSelected]);
+	}, [defaultOptions, selected]);
 
 	const handleOpen: SelectPops['onOpen'] = ({ open }) => {
 		if (open === undefined) return;
@@ -52,13 +50,8 @@ export const Select: FC<SelectPops> = ({
 	const handleChange: SelectMobileProps['onChange'] = ({ selected: updatedSelected }) => {
 		if (!updatedSelected) return;
 
-        setNewSelected(+updatedSelected.key);
+        setSelected(+updatedSelected.key);
 	};
-
-    const handleActionClick = () => {
-        setSelected(newSelected);
-        setOpen(false)
-    }
 
 	const renderValue: SelectMobileProps['valueRenderer'] = () => {
 		const updatedValue = defaultOptions.find(({ id }) => id === selected);
@@ -71,8 +64,7 @@ export const Select: FC<SelectPops> = ({
 	return (
 		<SelectMobile
 			onChange={handleChange}
-			closeOnSelect={false}
-			selected={newSelected.toString()}
+			selected={selected.toString()}
 			onOpen={handleOpen}
 			open={open}
 			block={true}
@@ -80,18 +72,10 @@ export const Select: FC<SelectPops> = ({
 			optionClassName={styles.option}
 			optionsListClassName={styles.optionList}
 			valueRenderer={renderValue}
+			fieldProps={{
+				focused: false,
+			}}
 			bottomSheetProps={{
-				footerClassName: styles.footer,
-				actionButton: (
-					<Button
-						size='m'
-						block={true}
-						onClick={handleActionClick}
-						view={newSelected === selected ? undefined : 'primary'}
-					>
-						{newSelected === selected ? 'Отмена' : 'Готово'}
-					</Button>
-				),
 				hasCloser: false,
 				rightAddons: <CrossMIcon onClick={handleClick} />,
 				swipeable: false,

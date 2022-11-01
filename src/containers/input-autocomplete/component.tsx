@@ -1,17 +1,17 @@
-import React, {FC, memo, useCallback, useMemo, useState} from 'react';
-import {useFormikContext, useField} from 'formik';
-import cn from 'classnames';
+import React, { FC, memo, useCallback, useMemo, useState } from "react";
+import { useField, useFormikContext } from "formik";
+import cn from "classnames";
 
 import {
     InputAutocompleteMobile as DefaultInputAutocompleteMobile,
-    InputAutocompleteMobileProps as DefaultInputAutocompleteMobileProps
-} from '@alfalab/core-components/input-autocomplete/mobile';
-import {Typography} from '@alfalab/core-components/typography';
-import {MaskedInput} from '@alfalab/core-components/masked-input';
-import {CrossMIcon} from '@alfalab/icons-glyph/CrossMIcon';
-import {BaseSelectChangePayload} from '@alfalab/core-components/select';
+    InputAutocompleteMobileProps as DefaultInputAutocompleteMobileProps,
+} from "@alfalab/core-components/input-autocomplete/mobile";
+import { Typography } from "@alfalab/core-components/typography";
+import { MaskedInput } from "@alfalab/core-components/masked-input";
+import { CrossMIcon } from "@alfalab/icons-glyph/CrossMIcon";
+import { BaseSelectChangePayload } from "@alfalab/core-components/select";
 // @ts-ignore
-import styles from './component.module.css';
+import styles from "./component.module.css";
 
 const MemoizedInputAutocompleteMobile = memo(DefaultInputAutocompleteMobile);
 
